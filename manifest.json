@@ -1,0 +1,50 @@
+{
+    "manifest_version": 2,
+    "name":"B2B收录查询工具",
+    "description": "此工具用于查询B2B网站发布的产品页面是否被搜索引擎收录。",
+    "version": "1.0",
+    "icons": {
+        "128": "icon.png"
+    },
+    "content_scripts": [{
+        "matches": [
+			"http://member.ibicn.com/company/shop/supply*",// 国联资源网
+			"http://my.cntrades.com/myfa_xin.php?*",// 中国贸易网
+			"http://my.b2b.makepolo.com/ucenter/product/product_gl_new.php*",//马可波罗
+			"http://*.eastsoo.com/p/userBusiness/list.asp*",//东方供应商
+			//中国智能制造网 -- 无法抓取
+			"http://www.tpy888.cn/member/my_tpy888.php*",//太平洋安防网
+			"http://ua.cn5135.com/_App/Users/Enterprise/Opportunities/Opportunities_Manage.aspx*",//无忧商务网供求信息
+			"http://ua.cn5135.com/_App/Users/Enterprise/Product/Product_Manage.aspx*",//无忧商务网
+			//中国化工设备网 -- iframe框架 无法抓取
+			"http://membercenter.cn.made-in-china.com/product/list/*",//中国制造网
+			"https://www.bestb2b.com/manageselloffers.aspx*",//志趣网
+			"http://my.hooshong.com/myoffice/sell_list.html*",//机械在线
+			"http://user.qjy168.com/new/admin_provide.php*",//勤加缘网
+			"http://user.258.com/Product/sales*",//258
+			"http://www.jx188.com/user/my.php?mid=5*",//中国机械设备网
+			//阿土伯 -- iframe框架 无法抓取
+			"http://www.globalbuy.cc/member/my.php?mid=5*",//全球采购网
+			"http://www.jiancai365.cn/users/cplist.asp*",//中国建材采购网
+			"http://manage.maijx.com/sadcce/supply*",//买卖机械网
+			"https://work.gongchang.com/product/index/index*",//世界工厂
+			"http://www.yiwangtui.com/member/my.php?mid=5*",//一网推
+			"http://www.b2bwj.com/member/my.php?mid=5*",//万金网
+			"http://www.qiyegongqiu.net/member/msdfdfgfdgfdgfdy.php?mid=5*",//中国企业供求网
+			"http://www.qygq.com/member/my.php?mid=5*",//企业供求
+			"http://www.niczy.com/member/my.php?mid=5*",//商导在线
+			"http://my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cbusinonsale.html*",//慧聪网
+			"http://my.ebdoor.com/Product/ProductsOnSale.aspx*"//一比多
+		],
+        "js": ["js/jquery-1.12.3.min.js", "js/match.js"],
+        "run_at": "document_end"
+    }],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "B2B收录查询工具",// optional; shown in tooltip 
+		"default_popup": "result.html"      // optional 
+	},
+	"permissions": [
+		"https://www.baidu.com/"
+	]
+}
