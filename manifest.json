@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name":"B2B收录查询工具",
+    "name":"B2B收录查询工具V1.0",
     "description": "此工具用于查询B2B网站发布的产品页面是否被搜索引擎收录。",
     "version": "1.0",
     "icons": {
@@ -9,7 +9,7 @@
     "content_scripts": [{
         "matches": [
 			"http://member.ibicn.com/company/shop/supply*",// 国联资源网
-			"http://my.cntrades.com/myfa_xin.php?*",// 中国贸易网
+			"http://my.cntrades.com/myfa_xin.php?mid=5*",// 中国贸易网
 			"http://my.b2b.makepolo.com/ucenter/product/product_gl_new.php*",//马可波罗
 			"http://*.eastsoo.com/p/userBusiness/list.asp*",//东方供应商
 			//中国智能制造网 -- 无法抓取
@@ -30,10 +30,11 @@
 			"https://work.gongchang.com/product/index/index*",//世界工厂
 			"http://www.yiwangtui.com/member/my.php?mid=5*",//一网推
 			"http://www.b2bwj.com/member/my.php?mid=5*",//万金网
+			"http://member.gtobal.com/trade/sell*",//际通宝
 			"http://www.qiyegongqiu.net/member/msdfdfgfdgfdgfdy.php?mid=5*",//中国企业供求网
 			"http://www.qygq.com/member/my.php?mid=5*",//企业供求
 			"http://www.niczy.com/member/my.php?mid=5*",//商导在线
-			"http://my.b2b.hc360.com/my/turbine/template/corcenter%2Cbusiness%2Cbusinonsale.html*",//慧聪网
+			//慧聪网 -- 无法抓取
 			"http://my.ebdoor.com/Product/ProductsOnSale.aspx*"//一比多
 		],
         "js": ["js/jquery-1.12.3.min.js", "js/match.js"],
@@ -42,7 +43,7 @@
 	"browser_action": {
 		"default_icon": "icon.png",
 		"default_title": "B2B收录查询工具",// optional; shown in tooltip 
-		"default_popup": "result.html"      // optional 
+		"default_popup": "result.html"     // optional 
 	},
 	"permissions": [
 		"https://www.baidu.com/"
